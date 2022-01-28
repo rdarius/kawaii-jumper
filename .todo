@@ -1,0 +1,39 @@
+Setup:
+    ✔ make game canvas @done(22-01-28 20:23)
+    ✔ add a block to canvas movable with keyboard @done(22-01-28 20:53)
+    ☐ create basic socket.io server
+    ☐ connect players to the server
+    ☐ draw other players on canvas
+    ☐ update player position on canvas
+
+Game:
+    ☐ add physics for player to fall down
+    ☐ add interaction with blocks (and ground)
+    ☐ implement jump
+    ☐ add plyer collision?
+    ☐ allow player to enter a name before starting the game
+    ☐ show players names above their heads
+    ☐ restrict some words and name length
+
+Server:
+    ☐ do the same calculations for game logic (maybe use the same code base)
+    ☐ set player name
+    ☐ IMPLEMENT BANNING PEOPLE
+
+Win condition?:
+    ☐ reach some specific height? (premade map)
+    ☐ when time runs out player at the highest point wins? (randomy generated map)
+    last one standing:
+        ☐ player that is too far back from leading one looses?
+        ☐ last player after specific time is eliminated?
+
+
+Game art:
+    ☐ randomly generated from assets?
+    ☐ choosing one of preset characters?
+    ☐ character builder?
+
+misc:
+    ☐ user accounts to track their score and save their chacaters?
+    ☐ game ratio 9x16?
+    ☐ game ratio 16x9?

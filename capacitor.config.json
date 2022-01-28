@@ -1,0 +1,6 @@
+{
+	"appId": "io.ionic.starter",
+	"appName": "Kawaii-Jumper",
+	"webDir": "www",
+	"bundledWebRuntime": false
+}
