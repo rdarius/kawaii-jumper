@@ -1,39 +1,43 @@
 Setup:
     ✔ make game canvas @done(22-01-28 20:23)
     ✔ add a block to canvas movable with keyboard @done(22-01-28 20:53)
-    ☐ create basic socket.io server
-    ☐ connect players to the server
-    ☐ draw other players on canvas
-    ☐ update player position on canvas
+    ✔ create basic socket.io server @done(22-01-28 22:43)
+    ✔ connect players to the server @done(22-01-29 00:51)
+    ✔ draw other players on canvas @done(22-01-29 00:51)
+    ✔ update player position on canvas @done(22-01-29 00:51)
 
 Game:
-    ☐ add physics for player to fall down
-    ☐ add interaction with blocks (and ground)
-    ☐ implement jump
-    ☐ add plyer collision?
+    ✔ add physics for player to fall down @done(22-01-29 02:02)
+    ✔ add interaction with blocks (and ground) @done(22-01-29 11:17)
+    ✔ implement jump @done(22-01-29 02:02)
+    ✘ add plyer collision? @cancelled(22-01-29 11:18)
     ☐ allow player to enter a name before starting the game
     ☐ show players names above their heads
-    ☐ restrict some words and name length
+    ☐ add name length limit
 
 Server:
-    ☐ do the same calculations for game logic (maybe use the same code base)
+    ✘ do the same calculations for game logic (maybe use the same code base) @cancelled(22-01-29 11:18)
     ☐ set player name
-    ☐ IMPLEMENT BANNING PEOPLE
+    ✘ IMPLEMENT BANNING PEOPLE @cancelled(22-01-29 11:18)
 
 Win condition?:
     ☐ reach some specific height? (premade map)
     ☐ when time runs out player at the highest point wins? (randomy generated map)
     last one standing:
-        ☐ player that is too far back from leading one looses?
+        ✘ player that is too far back from leading one looses? @cancelled(22-01-29 11:19)
         ☐ last player after specific time is eliminated?
 
 
 Game art:
-    ☐ randomly generated from assets?
-    ☐ choosing one of preset characters?
-    ☐ character builder?
+    ✘ randomly generated from assets? @cancelled(22-01-29 11:19)
+    ✘ choosing one of preset characters? @cancelled(22-01-29 11:19)
+    ✘ character builder? @cancelled(22-01-29 11:19)
 
 misc:
-    ☐ user accounts to track their score and save their chacaters?
-    ☐ game ratio 9x16?
-    ☐ game ratio 16x9?
+    ✘ user accounts to track their score and save their chacaters? @cancelled(22-01-29 11:18)
+    ✔ game ratio 9x16? @done(22-01-29 11:17)
+    ✘ game ratio 16x9? @cancelled(22-01-29 11:17)
+
+
+ideas:
+    ✘ block fall off platform if they are 1/3 off it @cancelled(22-01-29 11:18)
