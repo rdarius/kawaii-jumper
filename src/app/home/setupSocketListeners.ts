@@ -1,4 +1,4 @@
-import { MapTile } from "../../../../Kawaii-Jumper-server/src/mapTile";
+import { MapTile } from "./mapTile";
 import { Globals } from "./globals";
 import { MySocket } from "./mySocket";
 import { Players } from "./players";

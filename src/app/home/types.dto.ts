@@ -1,4 +1,4 @@
-import { Position } from '../../../../Kawaii-Jumper-server/src/position';
+import { Position } from './position';
 import { Player } from './player';
 
 export type PlayerDTO = {

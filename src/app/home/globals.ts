@@ -1,7 +1,7 @@
 import { NativeAudio } from '@ionic-native/native-audio/ngx';
 import { Platform } from '@ionic/angular';
 import { Socket } from 'ngx-socket-io';
-import { MapTile } from '../../../../Kawaii-Jumper-server/src/mapTile';
+import { MapTile } from './mapTile';
 import { makeHTMLAudioElements } from './makeHTMLAudioElements';
 import { makeHTMLImageElements } from './makeHTMLImageObjects';
 import { Players } from './players';

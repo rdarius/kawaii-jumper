@@ -1,4 +1,3 @@
-import { Position } from '../../../../Kawaii-Jumper-server/src/position';
 import { applyGravity } from './applyGravity';
 import { DeltaTime } from './deltaTime';
 import { getAngleBetweenTwoPoints } from './getAngleBetweenTwoPoints';

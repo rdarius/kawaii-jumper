@@ -1,4 +1,4 @@
-import { MapTile } from '../../../../Kawaii-Jumper-server/src/mapTile';
+import { MapTile } from './mapTile';
 
 export const drawMap = (
   mapTiles: MapTile[],
