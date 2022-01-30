@@ -6,6 +6,7 @@ import {
   PlayerDTOList,
   PlayerList,
   StringNumber,
+  StringString,
   StringVector,
   Vector,
 } from './types.dto';
@@ -36,6 +37,10 @@ export class Players {
     }
   }
 
+  public removeAllPlayers(): void {
+    this.players = {};
+  }
+
   public resetVelocity(id: string): void {
     this.getPlayer(id).resetVelocity();
   }
@@ -53,6 +58,7 @@ export class Players {
   }
 
   public addMultiplaPlayers(players: PlayerDTOList): void {
+    this.players = {};
     for (let player of Object.keys(players)) {
       this.addPlayer(players[player]);
     }
@@ -77,6 +83,12 @@ export class Players {
   public updatePlayerDirection(playersDirection: StringNumber): void {
     for (let id of Object.keys(playersDirection)) {
       this.getPlayer(id).updateDirection(playersDirection[id]);
+    }
+  }
+
+  public updatePlayerNames(playersName: StringString): void {
+    for (let id of Object.keys(playersName)) {
+      this.getPlayer(id).setName(playersName[id]);
     }
   }
 

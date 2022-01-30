@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Kawaii Jumper</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <form (ngSubmit)="setName()">
+    <label for="name">{{ username ? 'Username: ' + username : 'Set your username' }}</label>
+    <input if="name" type="text" [(ngModel)]="user.username" name="username" />
+    <button type="submit">Change Username</button>
+  </form>
+
+  <a class="server-button" [routerLink]="['/game/1']">Server #1</a> 
+  <a class="server-button" [routerLink]="['/game/2']">Server #2 (no-map)</a> 
+  <a class="server-button" [routerLink]="['/game/3']">Server #3 (no-map)</a> 
+  <a class="server-button" [routerLink]="['/game/4']">Server #4 (no-map)</a> 
+  <a class="server-button" [routerLink]="['/game/5']">Server #5 (no-map)</a> 
+  <a class="server-button" [routerLink]="['/game/6']">Server #6 (no-map)</a> 
+</ion-content>

@@ -1,7 +1,10 @@
+import { NativeAudio } from '@ionic-native/native-audio/ngx';
+import { Platform } from '@ionic/angular';
 import { Socket } from 'ngx-socket-io';
 import { MapTile } from '../../../../Kawaii-Jumper-server/src/mapTile';
 import { makeHTMLAudioElements } from './makeHTMLAudioElements';
 import { makeHTMLImageElements } from './makeHTMLImageObjects';
+import { Players } from './players';
 import { scaleScreen } from './scaleScreen';
 import { Vector } from './types.dto';
 
@@ -9,8 +12,8 @@ export class Globals {
   public width: number = 0;
   public height: number = 0;
   public canvasScale: number = 0;
-  public pageWidth: number = 0;
-  public pageHeight: number = 0;
+  public pageWidth: number = window.innerWidth;
+  public pageHeight: number = window.innerHeight;
   public canvas: HTMLCanvasElement;
   public context: CanvasRenderingContext2D;
   public playerImages: HTMLImageElement[] = [];
@@ -22,6 +25,16 @@ export class Globals {
   public playerSize: Vector = { x: 50, y: 34 };
   public map: MapTile[] = [];
   public backgroudnImage: HTMLImageElement;
+  public nativeAudio: NativeAudio;
+  public platform: Platform;
+  public collisionLogging: boolean = false;
+  public mapBuilder: boolean = false;
+  public lastPointerPosition: Vector = { x: 0, y: 0 };
+  public builtMap: MapTile[] = [];
+  public myLastPosition: Vector = { x: 0, y: 0 };
+  public mapBuilderTile: number = 0;
+  public canvasOffset: Vector = { x: 0, y: 0 };
+  public keysDown: boolean[] = [];
 
   private readonly playerImageFiles: string[] = [
     '/assets/slime-1-left.png',

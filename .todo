@@ -11,21 +11,21 @@ Game:
     ✔ add interaction with blocks (and ground) @done(22-01-29 11:17)
     ✔ implement jump @done(22-01-29 02:02)
     ✘ add plyer collision? @cancelled(22-01-29 11:18)
-    ☐ allow player to enter a name before starting the game
-    ☐ show players names above their heads
-    ☐ add name length limit
+    ✔ allow player to enter a name before starting the game @done(22-01-30 03:32)
+    ✔ show players names above their heads @done(22-01-29 16:13)
+    ✔ add name length limit @done(22-01-30 03:39)
 
 Server:
     ✘ do the same calculations for game logic (maybe use the same code base) @cancelled(22-01-29 11:18)
-    ☐ set player name
+    ✔ set player name @done(22-01-29 16:13)
     ✘ IMPLEMENT BANNING PEOPLE @cancelled(22-01-29 11:18)
 
 Win condition?:
-    ☐ reach some specific height? (premade map)
-    ☐ when time runs out player at the highest point wins? (randomy generated map)
+    ✔ reach some specific height? (premade map) @done(22-01-30 03:39)
+    ✘ when time runs out player at the highest point wins? (randomy generated endless map) @cancelled(22-01-30 03:39)
     last one standing:
         ✘ player that is too far back from leading one looses? @cancelled(22-01-29 11:19)
-        ☐ last player after specific time is eliminated?
+        ✘ last player after specific time is eliminated? @cancelled(22-01-30 03:39)
 
 
 Game art:
@@ -36,8 +36,13 @@ Game art:
 misc:
     ✘ user accounts to track their score and save their chacaters? @cancelled(22-01-29 11:18)
     ✔ game ratio 9x16? @done(22-01-29 11:17)
-    ✘ game ratio 16x9? @cancelled(22-01-29 11:17)
 
 
 ideas:
     ✘ block fall off platform if they are 1/3 off it @cancelled(22-01-29 11:18)
+
+if I have time left:
+    ☐ once player reached the top, show winner's name to all players in that server and save their name in leaderboards next to button of that server
+    ☐ kawaii girl congatulates you when you reach the top
+    ☐ upgrade slimes to bigger and cuter creatures (maybe shrimps)
+    ☐ add background music from GDrive? (https://drive.google.com/drive/folders/1ZT_PQ4y0_KFQoQ34KN0AFEyaZ40WPX7L)

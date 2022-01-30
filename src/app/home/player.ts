@@ -1,14 +1,15 @@
 import { Position } from '../../../../Kawaii-Jumper-server/src/position';
 import { applyGravity } from './applyGravity';
 import { DeltaTime } from './deltaTime';
+import { getAngleBetweenTwoPoints } from './getAngleBetweenTwoPoints';
 import { getXFromAngle } from './getXFromAngle';
 import { getYFromAngle } from './getYFromAngle';
 import { Globals } from './globals';
 import { PlayerDTO, Vector } from './types.dto';
 
 export class Player {
-    private readonly globals: Globals;
-    private readonly deltaTime: DeltaTime;
+  private readonly globals: Globals;
+  private readonly deltaTime: DeltaTime;
   private id: string;
   private position: Vector;
   private name: string;
@@ -33,6 +34,7 @@ export class Player {
     this.movingVelocity = {
       ...applyGravity(this.movingVelocity, this.deltaTime.getDeltaTime()),
     };
+    console.log(this.movingVelocity);
   }
 
   public resetVelocity() {
@@ -60,8 +62,15 @@ export class Player {
   }
 
   public getName(): string {
+    if (this.isMyself() && localStorage.getItem('username')) {
+      return localStorage.getItem('username');
+    }
     return this.name;
   }
+
+  public setName(name: string): void {
+    this.name = name;
+  } 
 
   public getColor(): number {
     return this.color;
@@ -87,10 +96,30 @@ export class Player {
     this.color = this.color === 0 ? 1 : 0;
   }
 
-  public jump(angle: number, jumpPower: number): void {
+  public getJumpPower(): number {
+    return Math.abs(getXFromAngle(Date.now() / 1000) * 1.4);
+  }
+
+  private _getJumpDirection(x: number, y: number) {
+    return getAngleBetweenTwoPoints(
+      {
+        x: this.position.x + this.globals.playerSize.x / 2,
+        y: this.position.y + this.globals.playerSize.y / 2,
+      },
+      {
+        x: x * this.globals.canvasScale,
+        y: y * this.globals.canvasScale,
+      },
+    );
+  }
+
+  public jump(click: Vector): void {
+    const jumpPower = this.getJumpPower();
+    const angle = this._getJumpDirection(click.x, click.y);
     this.movingVelocity.x = getXFromAngle(angle) * jumpPower;
     this.movingVelocity.y = getYFromAngle(angle) * jumpPower;
     this.direction = this.movingVelocity.x > 0 ? 1 : 0;
+    console.log(this.movingVelocity, this.direction);
   }
 
   public move(): void {
@@ -101,8 +130,12 @@ export class Player {
   public touchBottom(resetPoint: number) {
     this.position.y = resetPoint - this.globals.playerSize.y - 1;
     this.grounded = true;
-    if (this.id === this.globals.socketId) {
-      this.globals.sounds[1].play();
+    if (this.isMyself()) {
+      if(this.globals.platform.is('cordova')) {
+        this.globals.nativeAudio.play('land').then(console.log, console.error);
+      } else {
+        this.globals.sounds[1].play();
+      }
     }
     this.resetVelocity();
   }
@@ -138,7 +171,7 @@ export class Player {
     this.globals.context.textAlign = 'center';
     this.globals.context.font = '25px Arial';
     this.globals.context.fillText(
-      this.name,
+      this.getName(),
       this.position.x + this.globals.playerSize.x / 2,
       this.position.y - 30,
     );

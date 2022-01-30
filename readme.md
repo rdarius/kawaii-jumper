@@ -1,0 +1,1 @@
+Server repository can be found [here](https://github.com/rdarius/kawaii-jumper-server)
